@@ -1,0 +1,16 @@
+Source: axfinddev
+Section: hamradio
+Priority: optional
+Maintainer: Célestine Gramaize F4HOF <celestine+dev@gramaize.eu>
+Build-Depends: debhelper-compat (= 13), libax25-dev
+Standards-Version: 4.7.0
+Homepage: https://github.com/dscp46/axfinddev
+Rules-Requires-Root: no
+
+Package: axfinddev
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libax25
+Description: Utility to resolve AX.25 port names to network devices
+ axfinddev is a small C utility that uses libax25 to map port names
+ (from /etc/ax25/axports) to their kernel network interfaces.
+

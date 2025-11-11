@@ -1,0 +1,49 @@
+.TH AXFINDDEV 8 "11 November 2025" Linux "Linux System Managers Manual"
+.SH NAME
+axfinddev \- Find the ax25 device name associated to a port name
+.SH SYNOPSIS
+.B axfinddev
+<\fIportname\fR>
+
+.SH DESCRIPTION
+.LP
+.B axfinddev
+looks for the AX.25 network interface device name associated to a port name described
+in \fI/etc/ax25/axports\fR, then prints it on \fIstdout\fR.
+.SH OPTIONS
+.TP 10
+<\fIportname\fR>
+The port name in \fI/etc/ax25/axports\fR to look for.
+.SH FILES
+.nf
+/etc/ax25/axports
+.fi
+.SH EXIT STATUS
+.B axfinddev
+exits with status 0 if the port is successfully found, and associated to a network device.
+
+When some error occurs,
+.B axfinddev
+returns one of the following non-zero exit codes:
+.TP
+.BI 1
+This is returned when 
+.B axfinddev
+fails to find an ax25 device associated to a valid port name.
+
+.TP
+.BI 254
+This is returned when 
+.B axfinddev
+is unable to load or parse \fI/etc/ax25/axports\fR.
+
+.TP
+.BI 255
+This is returned when no port name is provided on the command line.
+
+.SH "SEE ALSO"
+.BR axports (5),
+.BR kissattach (8).
+.SH AUTHOR
+Célestine Gramaize F4HOF <celestine+dev@gramaize.eu>
+
